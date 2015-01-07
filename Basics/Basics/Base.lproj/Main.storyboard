@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w5v-s2-AFj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="8kY-jc-3cS">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="w5v-s2-AFj" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yzq-wb-ZVD"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJk-nQ-A5r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qym-Yo-8kw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJS-he-XHr">
+                                <rect key="frame" x="36" y="45" width="528" height="30"/>
+                                <state key="normal" title="Log">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logText:" destination="w5v-s2-AFj" eventType="touchUpInside" id="tUE-ri-vEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLn-Lg-JWq">
+                                <rect key="frame" x="36" y="285" width="528" height="30"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearText:" destination="w5v-s2-AFj" eventType="touchUpInside" id="5f8-GA-36g"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLZ-FO-xan">
+                                <rect key="frame" x="16" y="115" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tey-78-Ut9">
+                                <rect key="frame" x="16" y="166" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v4x-Cu-7PL">
+                                <rect key="frame" x="16" y="218" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTy-i6-uS0">
+                                <rect key="frame" x="277" y="480" width="46" height="30"/>
+                                <state key="normal" title="View2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qv8-nT-nYY" kind="popoverPresentation" popoverAnchorView="tTy-i6-uS0" id="beT-sp-hPs">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tTy-i6-uS0" secondAttribute="trailing" constant="20" id="08G-mQ-7sn"/>
+                            <constraint firstItem="qLZ-FO-xan" firstAttribute="leading" secondItem="qym-Yo-8kw" secondAttribute="leadingMargin" id="4Ve-Zy-2kx"/>
+                            <constraint firstItem="lJS-he-XHr" firstAttribute="top" secondItem="yzq-wb-ZVD" secondAttribute="bottom" constant="25" id="83U-Ww-nep"/>
+                            <constraint firstItem="qLZ-FO-xan" firstAttribute="top" secondItem="lJS-he-XHr" secondAttribute="bottom" constant="40" id="8Fa-Mx-PRZ"/>
+                            <constraint firstItem="tTy-i6-uS0" firstAttribute="leading" secondItem="qym-Yo-8kw" secondAttribute="leadingMargin" constant="20" id="CKd-oH-ewo"/>
+                            <constraint firstItem="QJk-nQ-A5r" firstAttribute="top" secondItem="tTy-i6-uS0" secondAttribute="bottom" constant="90" id="GlI-9p-5pg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BLn-Lg-JWq" secondAttribute="trailing" constant="20" id="Sg8-ZD-ceG"/>
+                            <constraint firstItem="v4x-Cu-7PL" firstAttribute="trailing" secondItem="qym-Yo-8kw" secondAttribute="trailingMargin" id="W1i-IL-2ED"/>
+                            <constraint firstItem="lJS-he-XHr" firstAttribute="leading" secondItem="qym-Yo-8kw" secondAttribute="leadingMargin" constant="20" id="XiD-ES-nT8"/>
+                            <constraint firstItem="v4x-Cu-7PL" firstAttribute="leading" secondItem="qym-Yo-8kw" secondAttribute="leadingMargin" id="ZpW-4m-fwu"/>
+                            <constraint firstItem="Tey-78-Ut9" firstAttribute="trailing" secondItem="qym-Yo-8kw" secondAttribute="trailingMargin" id="bI8-R0-gU4"/>
+                            <constraint firstItem="v4x-Cu-7PL" firstAttribute="top" secondItem="Tey-78-Ut9" secondAttribute="bottom" constant="22" id="bTz-l8-cm4"/>
+                            <constraint firstItem="Tey-78-Ut9" firstAttribute="top" secondItem="qLZ-FO-xan" secondAttribute="bottom" constant="21" id="be5-fh-qqL"/>
+                            <constraint firstItem="qLZ-FO-xan" firstAttribute="trailing" secondItem="qym-Yo-8kw" secondAttribute="trailingMargin" id="d3F-Pg-jft"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lJS-he-XHr" secondAttribute="trailing" constant="20" id="g0D-jH-JQB"/>
+                            <constraint firstItem="v4x-Cu-7PL" firstAttribute="top" secondItem="Tey-78-Ut9" secondAttribute="bottom" constant="22" id="gcG-5c-bIT"/>
+                            <constraint firstItem="Tey-78-Ut9" firstAttribute="leading" secondItem="qym-Yo-8kw" secondAttribute="leadingMargin" id="lPG-LM-3qP"/>
+                            <constraint firstItem="BLn-Lg-JWq" firstAttribute="leading" secondItem="qym-Yo-8kw" secondAttribute="leadingMargin" constant="20" id="mTM-hy-uY2"/>
+                            <constraint firstItem="QJk-nQ-A5r" firstAttribute="top" secondItem="BLn-Lg-JWq" secondAttribute="bottom" constant="285" id="nu1-SE-PVU"/>
+                            <constraint firstItem="Tey-78-Ut9" firstAttribute="top" secondItem="qLZ-FO-xan" secondAttribute="bottom" constant="21" id="ooG-Ca-COM"/>
+                            <constraint firstItem="BLn-Lg-JWq" firstAttribute="top" secondItem="v4x-Cu-7PL" secondAttribute="bottom" constant="37" id="rJa-1H-0Qs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="Tey-78-Ut9" id="e9f-G2-XUo"/>
+                        <outlet property="password" destination="v4x-Cu-7PL" id="0At-N6-hFG"/>
+                        <outlet property="username" destination="qLZ-FO-xan" id="WW7-m9-VQ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeX-9y-udU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="327"/>
+        </scene>
+        <!--Buttons-->
+        <scene sceneID="KPw-Jl-b00">
+            <objects>
+                <viewController storyboardIdentifier="buttons" id="qv8-nT-nYY" customClass="Buttons" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3AU-X9-51I"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cb0-6j-ani"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sSU-bV-Mw2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZ6-xe-Mn6" customClass="CircleButton">
+                                <rect key="frame" x="16" y="120" width="152" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redButton:" destination="qv8-nT-nYY" eventType="touchUpInside" id="SFe-Aw-s2z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ays-7d-wWb" customClass="CircleButton">
+                                <rect key="frame" x="16" y="328" width="152" height="149"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="greenButton:" destination="qv8-nT-nYY" eventType="touchUpInside" id="Opv-oP-8Cn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-Y2-ygI" customClass="CircleButton">
+                                <rect key="frame" x="224" y="120" width="152" height="150"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blueButton:" destination="qv8-nT-nYY" eventType="touchUpInside" id="yLj-HR-bWG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-7B-J9D" customClass="CircleButton">
+                                <rect key="frame" x="224" y="328" width="152" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerSize">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="orangeButton:" destination="qv8-nT-nYY" eventType="touchUpInside" id="ZB7-ZQ-ocz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="blueButton" destination="Mn3-Y2-ygI" id="SR0-Ne-1NN"/>
+                        <outlet property="greenButton" destination="ays-7d-wWb" id="JSY-PL-ze7"/>
+                        <outlet property="mainView" destination="sSU-bV-Mw2" id="OI8-Uk-Ku4"/>
+                        <outlet property="redButton" destination="DZ6-xe-Mn6" id="MLc-rc-rvw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nar-jx-FcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144" y="327"/>
+        </scene>
+    </scenes>
+</document>
