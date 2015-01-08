@@ -46,11 +46,11 @@
     _mainView.backgroundColor = [UIColor redColor];
     
 }
-
--(IBAction)changeBG:(id)sender {
-    UIButton *button = (UIButton *)sender;
-    self.mainViewbackground = button.backgroundColor;
-}
+//
+//-(IBAction)changeBG:(id)sender {
+//    UIButton *button = (UIButton *)sender;
+//    self.mainViewbackground = button.backgroundColor;
+//}
 
 - (IBAction)blueButton:(id)sender {
     _mainView.backgroundColor = [UIColor blueColor];
