@@ -28,18 +28,20 @@
 // and set friendInfo based on cell selected
 
 
-@interface FriendDetailVC ()
+@interface FriendDetailVC () <UITableViewDelegate,UITableViewDataSource>
 
 @end
 
 @implementation FriendDetailVC
+{
+    NSArray *repos;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   
-    
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     
     NSString *username = self.friendInfo[@"login"];
@@ -48,11 +50,47 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSArray *repos = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
     
-    NSLog(@"%@",repos);
+    repos = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+    
+    UITableView *tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 200, 320, 368)];
+    
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    
+    [self.view addSubview:tableview];
+    
+//    NSLog(@"%@",repos);
 
 }
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return repos.count;
+    
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    
+    
+    
+    cell.textLabel.text = repos[indexPath.row][@"name"];
+    
+    if (repos[indexPath.row][@"description"]== [NSNull null]) {
+    }else{
+    
+    cell.detailTextLabel.text = repos[indexPath.row][@"description"];
+    
+    }
+    return cell;
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

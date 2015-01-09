@@ -31,7 +31,7 @@
                  @{
                      @"login": @"",
                      @"https://api.github.com/users/%@":@"",
-                     @"repos_url": @"https://api.github.com/users/%@/repos",
+                     @"repos_url": @"",
                      @"id": @"",
                      @"avatar_url": @"https://avatars.githubusercontent.com/u/%@",
                      @"name": @"",
@@ -175,7 +175,7 @@
     FriendDetailVC *detailVC = [[FriendDetailVC alloc] init];
     detailVC.friendInfo = friends[indexPath.row];
     
-    detailVC.view.backgroundColor = [UIColor purpleColor];
+    //detailVC.view.backgroundColor = [UIColor purpleColor];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
