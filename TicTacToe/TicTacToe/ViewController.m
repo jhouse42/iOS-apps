@@ -8,16 +8,22 @@
 
 #import "ViewController.h"
 
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 // Center Squares on View
-// Score Label on top that keeps track of wins for each player--two global instance variables that keep track of each players score
 // Make buttons change colors instead of title (reset colors when play again)
-// Buttons at bottom that resets game scores
+// Score Label on top that keeps track of wins for each player--two global instance variables that keep track of each players score
+// Button at bottom that resets game scores
 //
 
 
 
 
 @interface ViewController () <UIAlertViewDelegate>
+
+@property (nonatomic) int player1Score;
+@property (nonatomic) int player2Score;
 
 @end
 
@@ -30,11 +36,65 @@
     
     NSMutableArray *buttons;
     
+   // int player1Score;
+   // int player2Score;
+    
+    UILabel *score1Label;
+    UILabel *score2Label;
+    
+    NSArray *playerColors;
+    
+}
+
+// Setter method
+- (void)setPlayer1Score:(int)player1Score {
+    score1Label.text = [NSString stringWithFormat:@"Player1 : %d", player1Score];
+    _player1Score = player1Score;
+    
+
+}
+
+// Setter method
+- (void)setPlayer2Score:(int)player2Score {
+    score2Label.text = [NSString stringWithFormat:@"Player2 : %d", player2Score];
+    _player2Score = player2Score;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    playerColors = @[[UIColor lightGrayColor],[UIColor magentaColor], [UIColor cyanColor]];
+    
+    score1Label = [[UILabel alloc]initWithFrame:CGRectMake(10, 20, 150, 50)];
+//    score1Label.text = [NSString stringWithFormat:@"Player 1:%d", self.player1Score];
+    [self.view addSubview:score1Label];
+    score1Label.backgroundColor = [UIColor yellowColor];
+    score1Label.alpha = 0.6;
+    
+    
+    score2Label = [[UILabel alloc]initWithFrame:CGRectMake(210, 20, 150, 50)];
+//    score2Label.text = [NSString stringWithFormat:@"Player 2:%d", self.player2Score];
+    [self.view addSubview:score2Label];
+    score2Label.backgroundColor = [UIColor yellowColor];
+    score2Label.alpha = 0.6;
+    
+    
+    UIButton *resetButton = [[UIButton alloc]initWithFrame:CGRectMake(110, 560, 150, 50)];
+    //[self.view addSubview:resetButton];
+    resetButton.backgroundColor = [UIColor blueColor];
+    
+    [resetButton setTitle:@"Reset Game" forState:UIControlStateNormal];
+     //[resetButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:resetButton];
+    [resetButton addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
+    
+    resetButton.alpha = 0.6;
+  //  resetButton.layer.cornerRadius = height / 2;
+    
+    self.player1Score = 0;
+    self.player2Score = 0;
     
     buttons = [@[] mutableCopy];
     
@@ -51,10 +111,15 @@
     
     
     int rowCount = 3;
-    int ColCount = 3;
+    int colCount = 3;
     
-    CGFloat width = 100;
-    CGFloat height = 100;
+    CGFloat width = 120;
+    CGFloat height = 120;
+    
+    CGFloat padding = 4;
+    
+    CGFloat fullWidth = (colCount * width) + (colCount - 1) * padding;
+    CGFloat fullHeight = (rowCount * height) + (rowCount - 1) * padding;
     
     int buttonCount = 0;
     
@@ -62,22 +127,27 @@
         
         //loop per row
         
-        for (int c = 0; c < ColCount; c++) {
+        for (int c = 0; c < colCount; c++) {
             
             // loop per coloumn
             
-            CGFloat x = c *(width + 10);
-            CGFloat y = r *(height + 10);
+            CGFloat x = c *(width + padding) + (SCREEN_WIDTH - fullWidth) /2;
+            CGFloat y = r *(height + padding) + (SCREEN_HEIGHT - fullHeight) /2;
             
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, width, height)];
             
-            button.backgroundColor = [UIColor blueColor];
+            button.backgroundColor = playerColors[0];
             
 //            [button setTitle:[NSString stringWithFormat:@"%d",buttonCount] forState:UIControlStateNormal];
             
             button.tag = buttonCount;
             
             [button addTarget:self action:@selector(squareTapped:) forControlEvents:UIControlEventTouchUpInside];
+//            [button addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
+            
+            button.layer.cornerRadius = height / 2;
+            button.alpha = 0.6;
+            
             
             [self.view addSubview:button];
             
@@ -88,7 +158,7 @@
         }
     }
     
-    NSLog(@"subviews %@",self.view.subviews);
+    //NSLog(@"subviews %@",self.view.subviews);
     
 }
              
@@ -98,13 +168,23 @@
         return;
     }
         
-    
+
     
     squares[button.tag] = @(playerTurn);
     
-    [button setTitle:[NSString stringWithFormat:@"%d",playerTurn ] forState:UIControlStateNormal];
+    //[button setTitle:[NSString stringWithFormat:@"%d",playerTurn ] forState:UIControlStateNormal];
+    
+    button.backgroundColor = playerColors[playerTurn];
     
     playerTurn = (playerTurn ==2) ? 1 : 2;
+    
+    
+//    if (playerTurn ==1)  {
+//        button.backgroundColor = [UIColor greenColor];
+//        
+//    }else{
+//             button.backgroundColor = [UIColor redColor];
+//        }
     
     [self checkForWin];
     
@@ -153,9 +233,31 @@
         
         // player  won
         
-       
+//        switch (player) {
+//            case 1:
+//                self.player1Score++;
+//                break;
+//                
+//            case 2:
+//                self.player2Score++;
+//                break;
+//        }
+        
+        if (player == 1) {
+            self.player1Score ++;
+  //          score1Label.text = [NSString stringWithFormat:@"Player 1:%d", self.player1Score];
+
+        }
+        
+         if (player == 2) {
+            self.player2Score++;
+  //           score2Label.text = [NSString stringWithFormat:@"Player 2:%d", self.player2Score];
+        }
+        
+
         
         NSString *message = [NSString stringWithFormat:@"Player %d Won", player];
+        
         
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Winner" message:message delegate:self cancelButtonTitle:@"Play Again Now!" otherButtonTitles:nil];
         
@@ -165,14 +267,31 @@
     
 }
 
+- (void)reset {
+    
+   
+    for (UIButton *button in buttons) {
+        
+        button.backgroundColor = playerColors [0];
+ //       button.backgroundColor = [UIColor blueColor];
+        [button setTitle:@"" forState:UIControlStateNormal];
+    }
+    
+  //         NSLog(@"Play Again");
+    
+    score1Label.text = [NSString stringWithFormat:@"Player 1:0"];
+    score2Label.text = [NSString stringWithFormat:@"Player 1:0"];
+    
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     // square titles
     for (UIButton *button in buttons) {
         
         
-        [button setTitle:@"" forState:UIControlStateNormal];
-        
+//        button.backgroundColor = [UIColor blueColor];
+         button.backgroundColor = playerColors [0];
     }
     
     
@@ -189,10 +308,13 @@
     
 }
 
+                     
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
