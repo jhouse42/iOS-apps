@@ -80,7 +80,7 @@
     score2Label.alpha = 0.6;
     
     
-    UIButton *resetButton = [[UIButton alloc]initWithFrame:CGRectMake(110, 560, 150, 50)];
+    UIButton *resetButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 500, 150, 50)];
     //[self.view addSubview:resetButton];
     resetButton.backgroundColor = [UIColor blueColor];
     
@@ -113,10 +113,10 @@
     int rowCount = 3;
     int colCount = 3;
     
-    CGFloat width = 120;
-    CGFloat height = 120;
+    CGFloat width = 100;
+    CGFloat height = 100;
     
-    CGFloat padding = 4;
+    CGFloat padding = 2;
     
     CGFloat fullWidth = (colCount * width) + (colCount - 1) * padding;
     CGFloat fullHeight = (rowCount * height) + (rowCount - 1) * padding;
