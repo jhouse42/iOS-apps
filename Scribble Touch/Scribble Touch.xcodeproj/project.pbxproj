@@ -14,6 +14,7 @@
 		70F573CA1A66C78C00C1BFD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F573C91A66C78C00C1BFD4 /* Images.xcassets */; };
 		70F573CD1A66C78C00C1BFD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F573CB1A66C78C00C1BFD4 /* LaunchScreen.xib */; };
 		70F573D91A66C78C00C1BFD4 /* Scribble_TouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F573D81A66C78C00C1BFD4 /* Scribble_TouchTests.m */; };
+		70F573E41A66C82300C1BFD4 /* ScribbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F573E31A66C82300C1BFD4 /* ScribbleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		70F573D21A66C78C00C1BFD4 /* Scribble TouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Scribble TouchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F573D71A66C78C00C1BFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F573D81A66C78C00C1BFD4 /* Scribble_TouchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scribble_TouchTests.m; sourceTree = "<group>"; };
+		70F573E21A66C82300C1BFD4 /* ScribbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleView.h; sourceTree = "<group>"; };
+		70F573E31A66C82300C1BFD4 /* ScribbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +84,11 @@
 		70F573BB1A66C78C00C1BFD4 /* Scribble Touch */ = {
 			isa = PBXGroup;
 			children = (
-				70F573C01A66C78C00C1BFD4 /* AppDelegate.h */,
-				70F573C11A66C78C00C1BFD4 /* AppDelegate.m */,
+				70F573E21A66C82300C1BFD4 /* ScribbleView.h */,
+				70F573E31A66C82300C1BFD4 /* ScribbleView.m */,
 				70F573C31A66C78C00C1BFD4 /* ViewController.h */,
 				70F573C41A66C78C00C1BFD4 /* ViewController.m */,
 				70F573C61A66C78C00C1BFD4 /* Main.storyboard */,
-				70F573C91A66C78C00C1BFD4 /* Images.xcassets */,
-				70F573CB1A66C78C00C1BFD4 /* LaunchScreen.xib */,
 				70F573BC1A66C78C00C1BFD4 /* Supporting Files */,
 			);
 			path = "Scribble Touch";
@@ -96,6 +97,10 @@
 		70F573BC1A66C78C00C1BFD4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70F573C01A66C78C00C1BFD4 /* AppDelegate.h */,
+				70F573C11A66C78C00C1BFD4 /* AppDelegate.m */,
+				70F573C91A66C78C00C1BFD4 /* Images.xcassets */,
+				70F573CB1A66C78C00C1BFD4 /* LaunchScreen.xib */,
 				70F573BD1A66C78C00C1BFD4 /* Info.plist */,
 				70F573BE1A66C78C00C1BFD4 /* main.m */,
 			);
@@ -221,6 +226,7 @@
 			files = (
 				70F573C51A66C78C00C1BFD4 /* ViewController.m in Sources */,
 				70F573C21A66C78C00C1BFD4 /* AppDelegate.m in Sources */,
+				70F573E41A66C82300C1BFD4 /* ScribbleView.m in Sources */,
 				70F573BF1A66C78C00C1BFD4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

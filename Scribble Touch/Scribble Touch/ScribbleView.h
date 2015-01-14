@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ScribbleView.h
 //  Scribble Touch
 //
 //  Created by Jeanie House on 1/14/15.
@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ScribbleView : UIView
 
-
+@property (nonatomic) NSMutableArray *scribbles;
 
 
 @end
-
