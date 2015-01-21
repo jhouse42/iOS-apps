@@ -153,6 +153,15 @@
                                     <action selector="selectedFillColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XCx-iJ-TnL"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="42" translatesAutoresizingMaskIntoConstraints="NO" id="dZY-NW-9FA">
+                                <rect key="frame" x="254" y="562" width="110" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="7hK-xl-4Pj"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeAlpha:" destination="vXZ-lx-hvc" eventType="valueChanged" id="SMS-wK-bTO"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -165,8 +174,10 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ffs-Gf-6aU" secondAttribute="bottom" constant="8" id="ERk-kY-K7H"/>
                             <constraint firstItem="Szv-Va-wJX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Hcb-iO-q9n"/>
                             <constraint firstItem="ffs-Gf-6aU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Nat-5i-0BN"/>
+                            <constraint firstItem="dZY-NW-9FA" firstAttribute="leading" secondItem="ffs-Gf-6aU" secondAttribute="trailing" constant="56" id="QRO-JH-Ykx"/>
                             <constraint firstItem="le3-04-MVW" firstAttribute="leading" secondItem="vAz-oS-BW1" secondAttribute="trailing" constant="1" id="SO6-yB-FVe"/>
                             <constraint firstItem="vAz-oS-BW1" firstAttribute="leading" secondItem="Szv-Va-wJX" secondAttribute="trailing" constant="1" id="W7I-f3-PQl"/>
+                            <constraint firstItem="dZY-NW-9FA" firstAttribute="top" secondItem="ffs-Gf-6aU" secondAttribute="top" id="Xap-hc-hau"/>
                             <constraint firstItem="le3-04-MVW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Xnd-MS-EUd"/>
                             <constraint firstItem="8QW-It-h6q" firstAttribute="top" secondItem="Qxk-sO-Rjt" secondAttribute="bottom" constant="1" id="cDJ-6b-sDK"/>
                             <constraint firstItem="K2W-KP-ATA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="dsp-8l-NSq"/>

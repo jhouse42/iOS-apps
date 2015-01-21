@@ -53,6 +53,11 @@
         
         CGContextSetLineWidth(context, [scribble[@"strokeWidth"]floatValue]);
         
+  //       CGContextSetBlendMode(context, kCGBlendModeScreen);
+        
+         CGContextSetAlpha(context, 0.6);
+ //        CGContextSetBlendMode(context, kCGBlendModeMultiply);
+        
         UIColor *strokeColor = scribble[@"strokeColor"];
         [strokeColor set];
         
@@ -64,12 +69,17 @@
             
             CGPoint point = [pointValue CGPointValue];
             CGContextAddLineToPoint(context, point.x, point.y);
+     //       CGContextSetBlendMode(context, kCGBlendModeScreen);
+            
             
             
         }
         
         CGContextStrokePath(context);
         
+        CGContextSetAlpha(context, 0.6);
+        
+ //       CGContextSetBlendMode(context, kCGBlendModeMultiply);
         
         UIColor *fillColor = scribble[@"fillColor"];
         [fillColor set];
@@ -89,7 +99,7 @@
         
     }
     
-        
+   
         
 }
 

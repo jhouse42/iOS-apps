@@ -8,9 +8,7 @@
 
 #import "ViewController.h"
 #import "ScribbleView.h"
-//fill color
-//strokes rounded
-//join cap
+
 
 @interface ViewController ()
 
@@ -27,6 +25,7 @@
     UIColor *selectedColor;
     int selectedStrokeWidth;
     UIColor * selectedFillColor;
+    int changeAlpha;
 }
 
 
@@ -37,6 +36,7 @@
     selectedColor = [UIColor blackColor];
     selectedStrokeWidth = 1;
     selectedFillColor = [UIColor clearColor];
+    changeAlpha = 1;
 }
 
 
@@ -57,6 +57,14 @@
     
 }
 
+
+- (IBAction)changeAlpha:(UISlider *)sender {
+    
+    changeAlpha = sender.value;
+    
+}
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = touches.allObjects.firstObject;
@@ -71,8 +79,8 @@
                          @"fillColor":selectedFillColor,
                          @"strokeColor":selectedColor,
                          @"strokeWidth":@(selectedStrokeWidth),
-                         @"points":[@[[NSValue valueWithCGPoint:location]] mutableCopy]
-                         
+                         @"points":[@[[NSValue valueWithCGPoint:location]] mutableCopy],
+                         @"alpha":@(changeAlpha)
                          
                          } mutableCopy];
     
