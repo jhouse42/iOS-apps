@@ -114,7 +114,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1y4-qL-qyY">
                                 <rect key="frame" x="0.0" y="450" width="320" height="79"/>
-                                <color key="backgroundColor" red="0.29891102330000002" green="0.74724706139999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="79" id="51W-rC-YUS"/>
                                     <constraint firstAttribute="width" constant="320" id="ZM9-z0-dv5"/>
@@ -126,32 +126,49 @@
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mSL-ug-2mU">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filterCell" id="mSL-ug-2mU" customClass="FilterCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUO-BD-WZs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JdR-m1-qdS">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="vUO-BD-WZs" id="bEy-PV-H7H"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao2-p6-d1b" customClass="SickSlider">
+                                <rect key="frame" x="0.0" y="402" width="320" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ssl-lw-WF2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startPosition">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseColor" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="sliderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1y4-qL-qyY" firstAttribute="top" secondItem="Ao2-p6-d1b" secondAttribute="bottom" constant="8" symbolic="YES" id="HpW-aX-KsR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1y4-qL-qyY" secondAttribute="trailing" constant="-16" id="K05-Jp-W2N"/>
+                            <constraint firstItem="Ao2-p6-d1b" firstAttribute="leading" secondItem="jUj-ye-R8E" secondAttribute="leadingMargin" constant="-16" id="S5b-KI-v5r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ao2-p6-d1b" secondAttribute="trailing" constant="-16" id="W6s-53-jhp"/>
                             <constraint firstItem="AuZ-sl-f5b" firstAttribute="top" secondItem="1y4-qL-qyY" secondAttribute="bottom" constant="39" id="Zmc-dh-pIz"/>
                             <constraint firstItem="1y4-qL-qyY" firstAttribute="leading" secondItem="jUj-ye-R8E" secondAttribute="leadingMargin" constant="-16" id="zra-GA-2ts"/>
                         </constraints>
@@ -161,6 +178,7 @@
                     <connections>
                         <outlet property="filterCollectionView" destination="1y4-qL-qyY" id="6X9-Nt-xBm"/>
                         <outlet property="filterImageView" destination="gYi-6n-H81" id="lvT-g3-rPr"/>
+                        <outlet property="slider1" destination="Ao2-p6-d1b" id="laM-Aq-zTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deV-Wj-uvV" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,8 @@
 		7006237C1A6E986000482B89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7006237A1A6E986000482B89 /* LaunchScreen.xib */; };
 		700623881A6E986000482B89 /* CaptureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 700623871A6E986000482B89 /* CaptureTests.m */; };
 		700623931A6EAD9500482B89 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700623921A6EAD9500482B89 /* FilterViewController.m */; };
+		70B3A80D1A70382100B432EE /* SickSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B3A80C1A70382100B432EE /* SickSlider.m */; };
+		70D999E81A700EFE0021FD42 /* FilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D999E71A700EFE0021FD42 /* FilterCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		700623871A6E986000482B89 /* CaptureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureTests.m; sourceTree = "<group>"; };
 		700623911A6EAD9500482B89 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		700623921A6EAD9500482B89 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		70B3A80B1A70382100B432EE /* SickSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SickSlider.h; sourceTree = "<group>"; };
+		70B3A80C1A70382100B432EE /* SickSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SickSlider.m; sourceTree = "<group>"; };
+		70D999E61A700EFE0021FD42 /* FilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterCell.h; sourceTree = "<group>"; };
+		70D999E71A700EFE0021FD42 /* FilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				700623731A6E986000482B89 /* ViewController.m */,
 				700623911A6EAD9500482B89 /* FilterViewController.h */,
 				700623921A6EAD9500482B89 /* FilterViewController.m */,
+				70B3A80B1A70382100B432EE /* SickSlider.h */,
+				70B3A80C1A70382100B432EE /* SickSlider.m */,
+				70D999E61A700EFE0021FD42 /* FilterCell.h */,
+				70D999E71A700EFE0021FD42 /* FilterCell.m */,
 				700623751A6E986000482B89 /* Main.storyboard */,
 				7006236B1A6E986000482B89 /* Supporting Files */,
 			);
@@ -224,7 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B3A80D1A70382100B432EE /* SickSlider.m in Sources */,
 				700623741A6E986000482B89 /* ViewController.m in Sources */,
+				70D999E81A700EFE0021FD42 /* FilterCell.m in Sources */,
 				700623711A6E986000482B89 /* AppDelegate.m in Sources */,
 				700623931A6EAD9500482B89 /* FilterViewController.m in Sources */,
 				7006236E1A6E986000482B89 /* main.m in Sources */,

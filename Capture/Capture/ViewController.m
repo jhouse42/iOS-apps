@@ -135,6 +135,10 @@
     
     [self.navigationController pushViewController:filterVC animated:YES];
     
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
 }
 
 
